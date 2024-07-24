@@ -374,7 +374,7 @@
   padding: 24px;
   gap: 16px;
   border-radius: 4px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .feedback-content {
@@ -383,4 +383,83 @@
   font-weight: 400;
   line-height: 22px;
   text-align: left;
+}
+
+.quiz {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5rem;
+}
+.quiz-first-div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.quiz-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 65px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #2d2d2d;
+}
+.quiz-content {
+  font-family: "Poppins", sans-serif;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #2d2d2d;
+}
+.reviews {
+}
+.review-first-div {
+}
+.review-second-div {
+}
+.review-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 184px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  gap: 2rem;
+}
+.reviewer {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #2d2d2d;
+}
+.review {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #2d2d2d;
+}
+
+.marriage-primary-button {
+  margin-top: 1rem;
+  width: 309px;
+  height: 56px;
+  color: white;
+  background-color: #00bac2;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
