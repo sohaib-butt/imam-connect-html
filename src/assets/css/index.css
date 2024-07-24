@@ -703,3 +703,24 @@
   color: white;
   opacity: 40%;
 }
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-providers-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 357.33px;
+  height: 521.67px;
+  border-radius: 18px;
+  border: 1px solid #D7D7D7;
+  padding: 1rem;
+  opacity: 0px;
+  gap: 0.75rem;
+}
