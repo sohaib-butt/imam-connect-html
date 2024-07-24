@@ -19,7 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const popularTags = ["Nikah", "Marriage & Family Services", "Classes", "Training", "Counselling", "Life update"];
+  const popularTags = [
+    "Nikah",
+    "Marriage & Family Services",
+    "Classes",
+    "Training",
+    "Counselling",
+    "Life update",
+  ];
 
   const tagList = document.getElementById("popular-list");
 
@@ -55,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/marriage.svg", // Replace with actual paths to your logos
     "assets/images/b&d.svg",
     "assets/images/classes.svg",
-    "assets/images/support.svg"
+    "assets/images/support.svg",
   ];
 
   const serviceContainer = document.getElementById("service-list");
@@ -67,5 +74,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // img.style.width = "100px"; // Adjust the width as needed
     // img.style.height = "100px"; // Adjust the height as needed
     serviceContainer.appendChild(img);
+  });
+
+  const statsData = [
+    { count: "10k+", text: "Service Providers" },
+    { count: "931k+", text: "Services searched per day" },
+    { count: "10k+", text: "Customers present day" },
+    { count: "100+", text: "Categories" },
+  ];
+
+  const statsContainer = document.getElementById("stats-container");
+
+  statsData.forEach((stat) => {
+    const statDiv = document.createElement("div");
+    statDiv.classList.add("stat-div");
+
+    const statCount = document.createElement("span");
+    statCount.classList.add("stat-count");
+    statCount.textContent = stat.count;
+
+    const statText = document.createElement("span");
+    statText.classList.add("stat-txt");
+    statText.textContent = stat.text;
+
+    statDiv.appendChild(statCount);
+    statDiv.appendChild(statText);
+    statsContainer.appendChild(statDiv);
   });
 });
