@@ -194,8 +194,8 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  background-color: #E0D6FF;
-  color: #442D87;
+  background-color: #e0d6ff;
+  color: #442d87;
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 13px;
@@ -219,4 +219,28 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.media-partners {
+  background-color: #442d87;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 35px 20px 35px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.txt-media-partners {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.media-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
