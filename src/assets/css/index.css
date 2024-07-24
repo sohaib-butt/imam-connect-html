@@ -417,12 +417,6 @@
   text-align: left;
   color: #2d2d2d;
 }
-.reviews {
-}
-.review-first-div {
-}
-.review-second-div {
-}
 .review-div {
   width: 100%;
   display: flex;
@@ -453,6 +447,77 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #F8F9FF;
+  background-color: #f8f9ff;
   padding: 80px 105px 40px 105px;
+}
+
+.psychologist-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 31.5px;
+  text-align: left;
+  color: #2d2d2d;
+}
+
+.how-it-works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/howItWorksBg.svg") !important;
+  padding: 80px 105px 40px 105px;
+  gap: 4rem;
+}
+
+.how-it-works-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: -1.2000000476837158px;
+  text-align: center;
+  color: white;
+}
+
+.get-started {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 105px 40px 105px;
+}
+
+.get-started-card {
+  width: 80%;
+  height: 100%;
+  background-color: #442d87;
+  border-radius: 24px;
+  padding: 40px 80px 40px 80px;
+  position: relative;
+}
+
+.get-started-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 76px;
+  letter-spacing: -1.2000000476837158px;
+  text-align: left;
+  color: white;
+}
+.get-started-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6);;
+}
+
+.get-started-img {
+  position: absolute;
+  bottom: 0px;
+  right: -55px;
 }
