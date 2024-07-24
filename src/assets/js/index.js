@@ -31,14 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const logos = [
-    "assets/images/yahoo.svg", // Replace with actual paths to your logos
+    "assets/images/yahoo.svg",
     "assets/images/vulcan.svg",
     "assets/images/bbc.svg",
     "assets/images/islam.svg",
     "assets/images/arabnews.svg",
     "assets/images/lavanguaria.svg",
     "assets/images/malaymail.svg",
-    // Add more logos as needed
   ];
 
   const logoContainer = document.getElementById("media-list");
@@ -50,5 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // img.style.width = "100px"; // Adjust the width as needed
     // img.style.height = "100px"; // Adjust the height as needed
     logoContainer.appendChild(img);
+  });
+
+  const serviceList = [
+    "assets/images/marriage.svg", // Replace with actual paths to your logos
+    "assets/images/b&d.svg",
+    "assets/images/classes.svg",
+    "assets/images/support.svg"
+  ];
+
+  const serviceContainer = document.getElementById("service-list");
+
+  serviceList.forEach((logo) => {
+    const img = document.createElement("img");
+    img.src = logo;
+    img.alt = "Logo";
+    // img.style.width = "100px"; // Adjust the width as needed
+    // img.style.height = "100px"; // Adjust the height as needed
+    serviceContainer.appendChild(img);
   });
 });
