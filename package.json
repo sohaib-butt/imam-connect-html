@@ -20,9 +20,10 @@
     "url": "https://github.com/sohaib-butt/imam-connect/issues"
   },
   "homepage": "https://github.com/sohaib-butt/imam-connect#readme",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-autoprefixer": "^9.0.0"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
     "browser-sync": "^3.0.2",
     "clean-css": "^5.3.3",
     "del": "^7.1.0",

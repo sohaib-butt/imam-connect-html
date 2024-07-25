@@ -10,10 +10,14 @@ import npmdist from "gulp-npm-dist";
 import replace from "gulp-replace";
 import uglify from "gulp-uglify";
 import useref from "gulp-useref-plus";
+import gulpSass from 'gulp-sass';
+import dartSass from 'sass';
 import rename from "gulp-rename";
 import sourcemaps from "gulp-sourcemaps";
 import postcss from "gulp-postcss";
-import autoprefixer from "autoprefixer";
+import autoprefixer from "gulp-autoprefixer";
+
+const sass = gulpSass(dartSass);
 
 const browsersyncInstance = browsersync.create();
 
@@ -50,10 +54,6 @@ const paths = {
       dir: "./src",
       files: "./src/**/*",
     },
-    css: {
-      dir: "./src/assets/css",
-      files: "./src/assets/css/**/*.css",
-    },
     html: {
       dir: "./src",
       files: "./src/**/*.html",
@@ -71,6 +71,12 @@ const paths = {
     partials: {
       dir: "./src/partials",
       files: "./src/partials/**/*",
+    },
+    scss: {
+      dir: "./src/assets/scss",
+      files: "./src/assets/scss/**/*",
+      main: "./src/assets/scss/*.scss",
+      icon: "./src/assets/scss/icons.scss",
     },
   },
 };
@@ -90,7 +96,7 @@ gulp.task("browsersyncReload", function (callback) {
 });
 
 gulp.task("watch", function () {
-  gulp.watch(paths.src.css.files, gulp.series("css", "browsersyncReload"));
+  gulp.watch(paths.src.scss.files, gulp.series("scss", "browsersyncReload"));
   gulp.watch(paths.src.js.dir, gulp.series("js", "browsersyncReload"));
   gulp.watch(
     [paths.src.html.files, paths.src.partials.files],
@@ -113,21 +119,19 @@ const cssOptions = {
   level: 2, // Optimization levels. The level option can be either 0, 1 (default), or 2, e.g.
 };
 
-gulp.task("css", function () {
+gulp.task("scss", function () {
   return gulp
-    .src(paths.src.css.files)
+    .src(paths.src.scss.files)
     .pipe(sourcemaps.init())
-    // .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest(paths.dist.css.dir))
-    .on("data", function (file) {
-      const buferFile = new CleanCSS(cssOptions).minify(file.contents);
-      file.contents = Buffer.from(buferFile.styles);
-    })
+    .pipe(sass({ errorLogToConsole: true, outputStyle: "compressed" }))
+    .on("error", console.error.bind(console))
     .pipe(
-      rename({
-        suffix: ".min",
+      autoprefixer({
+        browsers: ["last 2 versions"],
+        cascade: false,
       })
     )
+    .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.dist.css.dir));
 });
@@ -166,8 +170,8 @@ gulp.task("copy:all", function () {
       paths.src.base.files,
       "!" + paths.src.partials.dir,
       "!" + paths.src.partials.files,
-      "!" + paths.src.css.dir,
-      "!" + paths.src.css.files,
+      "!" + paths.src.scss.dir,
+      "!" + paths.src.scss.files,
       "!" + paths.src.js.dir,
       "!" + paths.src.js.files,
       "!" + paths.src.js.main,
@@ -222,7 +226,7 @@ gulp.task(
       "copy:all",
       // "copy:libs",
       "fileinclude",
-      "css",
+      "scss",
       "js",
       "html"
     ),
@@ -239,7 +243,7 @@ gulp.task(
     "copy:all",
     // "copy:libs",
     "fileinclude",
-    "css",
+    "scss",
     "js",
     "html"
   )
