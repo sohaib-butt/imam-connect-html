@@ -282,7 +282,7 @@ $font-size-xlarge: 36px;
 .service-list {
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
   gap: $gap-large;
 }
@@ -297,7 +297,7 @@ $font-size-xlarge: 36px;
 }
 
 .performance {
-  background-color: $performance-bg-color;
+  background-color: #f8f9ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -305,29 +305,29 @@ $font-size-xlarge: 36px;
 }
 
 .performance-heading {
-  font-family: $font-poppins;
-  font-size: $font-size-xlarge;
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
   font-weight: 700;
   line-height: 46.8px;
   letter-spacing: -0.02em;
   text-align: center;
-  color: $black-color;
-  margin-bottom: $margin-top-small;
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
 .performance-desc {
-  font-family: $font-poppins;
-  font-size: $font-size-small;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20.8px;
   text-align: center;
-  color: $performance-desc-color;
+  color: #2d2d2d;
 }
 
 .stat-div {
-  border-left: 4px solid $primary-bg-color; /* Line thickness and color */
+  border-left: 4px solid #442d87; /* Line thickness and color */
   height: 70px; /* Line height */
-  padding-left: $margin-top-small;
+  padding-left: 1rem;
   padding-right: 20px;
   display: flex;
   flex-direction: column;
@@ -335,7 +335,7 @@ $font-size-xlarge: 36px;
 }
 
 .stat-count {
-  font-family: $font-poppins;
+  font-family: "Poppins", sans-serif;
   font-size: 38px;
   font-weight: 700;
   line-height: 49.4px;
@@ -344,8 +344,8 @@ $font-size-xlarge: 36px;
 }
 
 .stat-txt {
-  font-family: $font-poppins;
-  font-size: $font-size-small;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20.8px;
   text-align: left;
@@ -728,18 +728,330 @@ $font-size-xlarge: 36px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  width: 100%;
 }
 
-.service-providers-card {
+@mixin service-box($background-color) {
+  background-color: $background-color;
+  border: 1px solid #e7e9ed;
+  border-radius: 10px;
+  width: 256px;
+  height: 165px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.marriage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.marriage {
+  @include service-box(#ffb2b2);
+}
+
+.life {
+  @include service-box(#fdffa5);
+}
+
+.training {
+  @include service-box(#909cff);
+}
+
+.counsel {
+  @include service-box(#b9ffc8);
+}
+
+.listing-count {
+  background-color: #442d87;
+  border-radius: 8px;
+  padding: 0px, 21.01px, 0px, 21.01px;
+  height: 30px;
+  width: 108px;
+  font-family: $font-poppins;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: $white-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt-marriage-service {
+  font-family: $font-poppins;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25.83px;
+  letter-spacing: -0.3799065351486206px;
+  text-align: left;
+  color: #161c2d;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 357.33px;
-  height: 521.67px;
+  width: 330px;
+  // height: 521.67px;
   border-radius: 18px;
   border: 1px solid #d7d7d7;
-  padding: $margin-top-small;
+  padding: 20px;
   opacity: 0px;
   gap: 0.75rem;
+  position: relative;
+
+  .profile-picture {
+    width: 161px;
+    height: 161px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #442d87;
+  }
+
+  .level {
+    position: absolute;
+    width: 71px;
+    height: 26px;
+    top: 27%;
+    left: 39%;
+    background-color: #e0d6ff;
+    color: #442d87;
+    padding: 2px 8px 2px 8px;
+    border-radius: 13px;
+    font-family: $font-poppins;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .heart-icon {
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    cursor: pointer;
+  }
+
+  .recommendation-div {
+    width: 80%;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 1666px;
+    padding: 8px 16px 8px 16px;
+    background-color: #442d87;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 8%;
+    .recommendation {
+      color: $white-color;
+      font-family: $font-poppins;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+  }
+
+  .location-div {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    .location {
+      font-family: $font-poppins;
+      font-size: 13.13px;
+      font-weight: 400;
+      line-height: 19.7px;
+      text-align: left;
+      color: #6d8493;
+    }
+  }
+
+  .name {
+    font-family: $font-poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #2a282f;
+  }
+
+  .price-rating {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 10px 0;
+
+    .price-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 21.01px 0px 21.01px;
+      background-color: #22c55e;
+      border-radius: 8px;
+      height: 30px;
+      .price {
+        color: $white-color;
+        font-family: $font-poppins;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+
+    .rating {
+      font-family: $font-poppins;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: $black-color;
+    }
+  }
+
+  .tags {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tag-voice {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 4%;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      height: 25px;
+      padding: 10.5px;
+      width: 126px;
+
+      .tag-voice-txt {
+        font-family: $font-poppins;
+        font-size: 12px;
+        font-weight: 400;
+        color: #6d8493;
+      }
+    }
+
+    .tag-role {
+      width: 147px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 4%;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      height: 25px;
+      padding: 10.5px;
+
+      .tag-role-txt {
+        font-family: $font-poppins;
+        font-size: 12px;
+        font-weight: 400;
+        color: #6d8493;
+      }
+    }
+  }
+
+  .session-primary-button {
+    // margin-top: $margin-top-small;
+    width: 100%;
+    height: 56px;
+    color: $white-color;
+    background-color: $primary-color;
+    border-radius: $border-radius-small;
+    font-family: $font-poppins;
+    font-size: $font-size-small;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+  gap: 2rem;
+}
+
+.number {
+  background-color: #fff;
+  color: #4a148c;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-poppins;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -1.2000000476837158px;
+  text-align: center;
+  margin: 0 auto 10px;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 275px;
+    border-bottom: 3px dashed #d5d7dd;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    left: 100%;
+  }
+}
+
+.steps-container .step:last-child .number::after {
+  display: none;
+}
+
+.step-heading {
+  font-family: $font-poppins;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: $white-color;
+}
+
+.step-content {
+  font-family: $font-poppins;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: center;
+  color: $white-color;
 }

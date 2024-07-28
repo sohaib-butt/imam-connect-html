@@ -58,24 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     logoContainer.appendChild(img);
   });
 
-  const serviceList = [
-    "assets/images/marriage.svg", // Replace with actual paths to your logos
-    "assets/images/b&d.svg",
-    "assets/images/classes.svg",
-    "assets/images/support.svg",
-  ];
-
-  const serviceContainer = document.getElementById("service-list");
-
-  serviceList.forEach((logo) => {
-    const img = document.createElement("img");
-    img.src = logo;
-    img.alt = "Logo";
-    // img.style.width = "100px"; // Adjust the width as needed
-    // img.style.height = "100px"; // Adjust the height as needed
-    serviceContainer.appendChild(img);
-  });
-
   const statsData = [
     { count: "10k+", text: "Service Providers" },
     { count: "931k+", text: "Services searched per day" },
@@ -84,8 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const statsContainer = document.getElementById("stats-container");
+  console.log('statsContainer', statsContainer);
 
   statsData.forEach((stat) => {
+    console.log('stat', stat);
     const statDiv = document.createElement("div");
     statDiv.classList.add("stat-div");
 
